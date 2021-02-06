@@ -1,14 +1,14 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Players from './players';
-
-function Navigate(){
-    return (
-        <Switch>
-            <Route exact path="/" component={Players}/>
-        </Switch>
-    );
-}
+import Game from './game';
 
 export default function Router(){
-    return <BrowserRouter><Navigate/></BrowserRouter>;
+    return (
+    <BrowserRouter>
+        <Switch>
+            <Route exact path="/" component={Players}/>
+            <Route path="/game" component={Game}/>
+        </Switch>
+    </BrowserRouter>
+    );
 }

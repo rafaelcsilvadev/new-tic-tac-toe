@@ -1,7 +1,13 @@
 import React from 'react';
 import { Main, BoxData, Label, Input, Select } from './styles';
+import ButtonComponents from '../../components/button';
 
 export default function Players(){
+
+    const pageChange = () => {
+        window.location.href = '/game'
+    }
+
     return (
         <Main>
             <BoxData>
@@ -26,6 +32,7 @@ export default function Players(){
                 </Label>
                 <Input type="text" name="player2" id="player2" placeholder="Jogador 2"/>
             </BoxData>
+            <ButtonComponents children="Jogar" onClick={pageChange}/>
         </Main>
     );
 }
