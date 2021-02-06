@@ -1,33 +1,31 @@
-export default function Game(){
+import { Main, BoxScore, Score, House, BoxButton } from './styles';
+import Button from '../../components/button';
 
-    const Field = () => {
-        return (
-            <div>
-                <span>
-                    X
-                </span>
-                <span>
-                    X
-                </span>
-                <span>
-                    X
-                </span>
-            </div>
-        );
-    }
+function Field() {
+	return (
+		<div>
+			<House>X</House>
+			<House>X</House>
+			<House>X</House>
+		</div>
+	);
+}
 
-    return (
-        <div>
-            <div>
-                <span>
-                    Jogador 1: 2 X 5 :Jogador 2
-                </span>
-            </div>
-            <div>
-                <Field />
-                <Field />
-                <Field />
-            </div>
-        </div>
-    );
+export default function Game() {
+	return (
+		<Main>
+			<BoxScore>
+				<Score>Rafa: 5 x 3 :Josi</Score>
+			</BoxScore>
+			<div>
+				<Field />
+				<Field />
+				<Field />
+			</div>
+			<BoxButton>
+				<Button children='Novo Jogo' />
+				<Button children='Mudar Jogadores' />
+			</BoxButton>
+		</Main>
+	);
 }
