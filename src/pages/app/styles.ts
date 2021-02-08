@@ -10,7 +10,8 @@ export const Global = createGlobalStyle`
     a, 
     a:link, 
     a:hover, 
-    a:visited{
+    a:visited,
+    button{
         text-decoration: none;
     }
 

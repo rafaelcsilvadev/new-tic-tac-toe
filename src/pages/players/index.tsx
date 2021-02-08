@@ -1,12 +1,22 @@
 import React from 'react';
 import { Main, BoxData, Label, Input, Select } from './styles';
 import ButtonComponents from '../../components/button';
+import { connect } from 'react-redux';
 
-export default function Players() {
-	const pageChange = () => {
-		window.location.href = '/game';
-	};
 
+function changePlayers(player1: string, player2: string, symbol?: boolean) {
+	//window.location.href = '/game'
+	return {
+		type: 'CHANGE_PLAYERS',
+		player1,
+		player2,
+		symbol
+	}
+
+	//return pageChange();
+}
+
+function Players({dispatch}: any) {
 	return (
 		<Main>
 			<BoxData>
@@ -25,7 +35,9 @@ export default function Players() {
 				<Label>Informe o nome do jogador 2.</Label>
 				<Input type='text' name='player2' id='player2' placeholder='Jogador 2' />
 			</BoxData>
-			<ButtonComponents children='Jogar' onClick={pageChange} />
+			<ButtonComponents children='Jogar' onClick={() => dispatch(changePlayers('Jaldimar', 'Nilza', false))} />
 		</Main>
 	);
 }
+
+export default connect()(Players); 
