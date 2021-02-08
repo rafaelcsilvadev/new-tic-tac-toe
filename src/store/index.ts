@@ -8,7 +8,7 @@ const INITIAL_STATE: any = {
 
 function reducer(state = INITIAL_STATE, action: any){
     switch(action.type){
-        case 'players':
+        case 'CHANGE_PLAYERS':
             return { 
                 player1: action.player1, 
                 player2: action.player2, 
