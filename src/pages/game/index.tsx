@@ -1,6 +1,7 @@
 import { Main, BoxScore, Score, House, BoxButton } from './styles';
 import Button from '../../components/button';
 import { connect } from 'react-redux';
+import { _State } from '../../interfaces';
 
 function Field() {
 	return (
@@ -12,11 +13,13 @@ function Field() {
 	);
 }
 
-function Game({player}: any) {
+function Game({ player }: _State) {
 	return (
 		<Main>
 			<BoxScore>
-				<Score> {player.player1}: 5 x 3 :{player.player2}</Score>
+				<Score>
+					{player.player1}: {player.score1} x {player.score2} :{player.player2}
+				</Score>
 			</BoxScore>
 			<div>
 				<Field />
@@ -31,6 +34,6 @@ function Game({player}: any) {
 	);
 }
 
-export default connect(state => ({
-	player: state
+export default connect((state: any) => ({
+	player: state.players,
 }))(Game);

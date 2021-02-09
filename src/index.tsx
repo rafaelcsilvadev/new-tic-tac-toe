@@ -7,8 +7,8 @@ import store from './store';
 render(
 	<StrictMode>
 		<Provider store={store}>
-			<App />	
-		</Provider>		
+			<App />
+		</Provider>
 	</StrictMode>,
 	document.querySelector('#root')
 );
