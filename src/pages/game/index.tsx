@@ -41,6 +41,7 @@ function Game({players, score}: StateProps) {
   );
 }
 
+<<<<<<< HEAD
 function mapStateToProps(state: any) {
 	return {
 		players: state.playerState.players,
@@ -49,3 +50,8 @@ function mapStateToProps(state: any) {
 }
 
 export default connect(mapStateToProps, null)(Game);
+=======
+export default connect((state: any) => ({
+	player: state.players
+}))(Game);
+>>>>>>> parent of 40369bf (finish redux)
