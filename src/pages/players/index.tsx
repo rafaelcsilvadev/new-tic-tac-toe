@@ -4,19 +4,10 @@ import ButtonComponents from '../../components/button';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { _Players } from '../../interfaces';
+import { PlayersActions  } from "../../store/actions";
 
-function changePlayers({ player1, player2, symbol, score1, score2 }: _Players) {
-	return {
-		type: 'CHANGE_PLAYERS',
-		player1,
-		player2,
-		symbol,
-		score1,
-		score2
-	};
-}
 
-function Players({ dispatch }: any) {
+function Players({ changePlayers }: any) {
   const newPlayers: _Players = {
     player1: 'Luiz Claudio',
     player2: 'Daniel',
@@ -40,16 +31,12 @@ function Players({ dispatch }: any) {
             <option defaultChecked value="true">
               X
             </option>
-            <option value="false">
-              O
-            </option>
+            <option value="false">O</option>
           </Select>
         </div>
       </BoxData>
       <BoxData>
-        <Label>
-          Informe o nome do jogador 2.
-        </Label>
+        <Label>Informe o nome do jogador 2.</Label>
         <Input
           type="text"
           name="player2"
@@ -58,16 +45,18 @@ function Players({ dispatch }: any) {
         />
       </BoxData>
       <Link to="/game">
-        <ButtonComponents
-          children="Jogar"
-          onClick={() => 
-            dispatch(
-              changePlayers(newPlayers)
-              )}
-        />
+        <ButtonComponents children="Jogar" onClick={() => changePlayers(newPlayers)} />
       </Link>
     </Main>
   );
 }
 
-export default connect()(Players);
+function mapDispatchToProps(dispatch: any) {
+	return {
+		changePlayers(newPlayers: _Players){
+      return dispatch(PlayersActions(newPlayers));
+    }
+	}
+}
+
+export default connect(null, mapDispatchToProps)(Players);

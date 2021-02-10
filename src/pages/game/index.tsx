@@ -34,6 +34,10 @@ function Game({ player }: any) {
 	);
 }
 
-export default connect((state: any) => ({
-	player: state.players
-}))(Game);
+function mapStateToProps(state: any) {
+	return {
+		player: state.players
+	}
+}
+
+export default connect(mapStateToProps, null)(Game);
