@@ -2,8 +2,11 @@ import React from 'react';
 import { Main, BoxData, Label, Input, Select } from './styles';
 import ButtonComponents from '../../components/button';
 import { Link } from 'react-router-dom';
-import { _Players } from '../../interfaces';
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
+import * as PLayersActions from '../../store/ducks/players/actions';
 
+interface DispatchProps {}
 
 function Players() {
 	return (
@@ -41,4 +44,8 @@ function Players() {
   );
 }
 
-export default Players;
+function mapDispatchToProps(dispatch: Dispatch) {
+    return bindActionCreators(PLayersActions, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(Players);
