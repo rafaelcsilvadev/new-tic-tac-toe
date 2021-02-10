@@ -18,8 +18,8 @@ function changePlayers({ player1, player2, symbol, score1, score2 }: _Players) {
 
 function Players({ dispatch }: any) {
   const newPlayers: _Players = {
-    player1: 'Jaldimar',
-    player2: 'Nilza',
+    player1: 'Luiz Claudio',
+    player2: 'Daniel',
     symbol: false,
     score1: 0,
     score2: 0,
@@ -40,12 +40,16 @@ function Players({ dispatch }: any) {
             <option defaultChecked value="true">
               X
             </option>
-            <option value="false">O</option>
+            <option value="false">
+              O
+            </option>
           </Select>
         </div>
       </BoxData>
       <BoxData>
-        <Label>Informe o nome do jogador 2.</Label>
+        <Label>
+          Informe o nome do jogador 2.
+        </Label>
         <Input
           type="text"
           name="player2"

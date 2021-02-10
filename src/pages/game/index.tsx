@@ -13,13 +13,13 @@ function Field() {
 	);
 }
 
-function Game({ player }: _State) {
+function Game({ player }: any) {
 	return (
 		<Main>
 			<BoxScore>
 				<Score>
 					{player.player1}: {player.score1} x {player.score2} :{player.player2}
-				</Score>
+				</Score> 
 			</BoxScore>
 			<div>
 				<Field />
@@ -35,5 +35,5 @@ function Game({ player }: _State) {
 }
 
 export default connect((state: any) => ({
-	player: state.players,
+	player: state.players
 }))(Game);
