@@ -17,17 +17,13 @@ export const BoxScore = styled.div`
 	justify-content: center;
 `;
 
-export const Score = styled.span`
-	font-size: 16px;
+export const ScoreStyle = styled.span`
+  font-size: 16px;
 
-	@media screen and (min-width: 400px) {
-		font-size: 20px;
-	}
+  @media screen and (min-width: 400px) {
+    font-size: 20px;
+  }
 `;
-
-export const BoxField = styled.div``;
-
-export const BoxLine = styled.div``;
 
 export const House = styled.button`
 	background: none;

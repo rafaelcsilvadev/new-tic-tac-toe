@@ -2,8 +2,8 @@ import { PlayerState, PlayerActionsState, PlayerActions } from './types';
 
 const INITIAL_STATE: PlayerState ={
     players:{
-        player1: 'Jog1',
-        player2: 'Jog2',
+        player1: '',
+        player2: '',
         symbol: true
     },
     score: {

@@ -1,23 +1,28 @@
-import { Main, BoxScore, Score, House, BoxButton } from './styles';
-import Button from '../../components/button';
+import { Main, BoxScore, ScoreStyle, House, BoxButton } from "./styles";
+import Button from "../../components/button";
+import { connect } from "react-redux";
+import { Player, PlayerState, Score } from "../../store/players/types";
 
 function Field() {
-	return (
-		<div>
-			<House>X</House>
-			<House>X</House>
-			<House>X</House>
-		</div>
-	);
+  return (
+    <div>
+      <House>X</House>
+      <House>X</House>
+      <House>X</House>
+    </div>
+  );
 }
 
-function Game() {
-	return (
+function Game(player: Player, score: Score) {
+  console.log("player", player);
+  console.log("score", score);
+  return (
     <Main>
       <BoxScore>
-        <Score>
-          Rafael: 0 x 0 :Josi
-        </Score>
+        <ScoreStyle>
+          {player.players.player1}:{score.score.player1}x{score.score.player2} :
+          {player.players.player2}
+        </ScoreStyle>
       </BoxScore>
       <div>
         <Field />
@@ -32,4 +37,11 @@ function Game() {
   );
 }
 
-export default Game;
+function mapStateToProps(state: PlayerState) {
+  return {
+    player: state.players,
+    score: state.score,
+  };
+}
+
+export default connect(mapStateToProps)(Game);
