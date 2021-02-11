@@ -31,7 +31,7 @@ function InputData({ players }: any) {
             id="player1"
             placeholder="Jogador 1"
             minLength={1}
-            maxLength={10}
+            maxLength={5}
             value={player1}
             onChange={(e) => setPlayer1(e.target.value)}
           />
@@ -56,7 +56,7 @@ function InputData({ players }: any) {
           id="player2"
           placeholder="Jogador 2"
           minLength={1}
-          maxLength={10}
+          maxLength={5}
           value={player2}
           onChange={(e) => setPlayer2(e.target.value)}
         />
@@ -74,4 +74,4 @@ function mapDispatchToProps(dispatch: Dispatch) {
       dispatch(PlayerActions.changeNamePlayers(newPlayer)),
   };
 }
-export default connect(mapDispatchToProps)(InputData);
+export default connect(null, mapDispatchToProps)(InputData);
