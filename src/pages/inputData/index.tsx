@@ -2,8 +2,11 @@ import React from 'react';
 import { Main, BoxData, Label, Input, Select } from './styles';
 import ButtonComponents from '../../components/button';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import * as PlayerActions from '../../store/players/actions';
 
-function Players() {
+function InputData({players}: any) {
 	return (
     <Main>
       <BoxData>
@@ -33,8 +36,15 @@ function Players() {
         />
       </BoxData>
       <Link to="/game">
-        <ButtonComponents children="Jogar" />
+        <ButtonComponents children="Jogar" onClick={players()}/>
       </Link>
     </Main>
   );
 }
+
+function mapDispatchToProps(dispatch: Dispatch){
+  return {
+    players: () => dispatch(PlayerActions.changeNamePlayers()),
+  };
+}
+export default connect(null, mapDispatchToProps)(InputData);
