@@ -34,6 +34,7 @@ export const Global = createGlobalStyle`
     h5, 
     h6, 
     label,
+    button,
     a{
         font-family: Arial, Helvetica, sans-serif;
         color: #fff;

@@ -2,25 +2,35 @@ import { Main, BoxScore, ScoreStyle, House, BoxButton } from "./styles";
 import Button from "../../components/button";
 import { connect } from "react-redux";
 import { Player, Score } from "../../store/players/types";
+import { useState } from "react";
 
-interface StateProps {
+export interface StateProps {
   playerReducer: {
     players: Player;
     score: Score;
   };
 }
 
-function Field() {
+function Field(props: any) {
   return (
-    <div>
-      <House>X</House>
-      <House>X</House>
-      <House>X</House>
-    </div>
+      <House onClick={props.onClick}>
+        {props.text}
+      </House>
   );
 }
 
 function Game({ player }: any) {
+  const [field, setField] = useState(Array(9).fill(null));
+  const [symbol, setSymbol] = useState(Boolean(player.players.symbol));
+
+  const fillField = (fieldValue: number) => {
+    const newField  = field.slice();
+    newField[fieldValue] = symbol ? 'X' : 'O';
+    
+    setField(newField);
+    setSymbol(!symbol);
+  }
+  
   return (
     <Main>
       <BoxScore>
@@ -31,9 +41,21 @@ function Game({ player }: any) {
         <ScoreStyle>:{player.players.player2}</ScoreStyle>
       </BoxScore>
       <div>
-        <Field />
-        <Field />
-        <Field />
+        <div>
+          <Field text={field[0]} onClick={() => fillField(0)} />
+          <Field text={field[1]} onClick={() => fillField(1)} />
+          <Field text={field[2]} onClick={() => fillField(2)} />
+        </div>
+        <div>
+          <Field text={field[3]} onClick={() => fillField(3)} />
+          <Field text={field[4]} onClick={() => fillField(4)} />
+          <Field text={field[5]} onClick={() => fillField(5)} />
+        </div>
+        <div>
+          <Field text={field[6]} onClick={() => fillField(6)} />
+          <Field text={field[7]} onClick={() => fillField(7)} />
+          <Field text={field[8]} onClick={() => fillField(8)} />
+        </div>
       </div>
       <BoxButton>
         <Button children="Novo Jogo" />

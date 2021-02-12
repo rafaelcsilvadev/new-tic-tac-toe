@@ -17,8 +17,8 @@ function playerReducer (state = INITIAL_STATE, action: PlayerActionsState){
         case PlayerActions.CHANGE_PLAYER: 
             return {
               players: {
-                player1: action.players.player1,
-                player2: action.players.player2,
+                player1: action.players.player1.substr(0, 5),
+                player2: action.players.player2.substr(0, 5),
                 symbol: action.players.symbol,
               },
               score: {

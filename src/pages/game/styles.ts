@@ -10,7 +10,7 @@ export const Main = styled.main`
 `;
 
 export const BoxScore = styled.div`
-	width: 20%;
+	width: 15%;
   margin: 0 0 20px 0;
   display: flex;
   flex-direction: row;
@@ -34,6 +34,15 @@ export const House = styled.button`
   width: 80px;
   height: 80px;
   outline: none;
+  font-size: 50px;
+  text-align: center;
+  padding: 0;
+
+  &::after{
+    content: '';
+    margin: 0 0 -10px 0;
+
+  }
 
   @media screen and (min-width: 400px) {
     width: 100px;
