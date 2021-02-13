@@ -6,7 +6,7 @@ export function changeNamePlayers(newPlayer: Player): PlayerActionsState {
     players: {
       player1: newPlayer.players.player1,
       player2: newPlayer.players.player2,
-      symbol: newPlayer.players.player2,
+      symbol: newPlayer.players.symbol,
     },
     score: {
       player1: 0,

@@ -21,7 +21,8 @@ function Field(props: any) {
 
 function Game({ player }: any) {
   const [field, setField] = useState(Array(9).fill(null));
-  const [symbol, setSymbol] = useState(Boolean(player.players.symbol));
+  const [symbol, setSymbol] = useState(player);
+  console.log('game', symbol)
 
   const fillField = (fieldValue: number) => {
     const newField  = field.slice();
@@ -58,8 +59,8 @@ function Game({ player }: any) {
         </div>
       </div>
       <BoxButton>
-        <Button children="Novo Jogo" />
-        <Button children="Mudar Jogadores" />
+        <Button bgColor="#47B821" children="Novo Jogo" />
+        <Button bgColor="#47B821" children="Mudar Jogadores" />
       </BoxButton>
     </Main>
   );

@@ -10,17 +10,20 @@ export const Main = styled.main`
 `;
 
 export const BoxScore = styled.div`
-	width: 15%;
   margin: 0 0 20px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  @media screen and (min-width: 400px) {
+    width: 20%;
+  }
 `;
 
 export const ScoreStyle = styled.span`
   font-size: 16px;
-  width: 20%;
+  padding: 0 10px;
   text-align: center;
 
   @media screen and (min-width: 400px) {
@@ -33,16 +36,11 @@ export const House = styled.button`
   border: 2px solid #fff;
   width: 80px;
   height: 80px;
-  outline: none;
   font-size: 50px;
   text-align: center;
   padding: 0;
-
-  &::after{
-    content: '';
-    margin: 0 0 -10px 0;
-
-  }
+  outline: none;
+  float: left;
 
   @media screen and (min-width: 400px) {
     width: 100px;

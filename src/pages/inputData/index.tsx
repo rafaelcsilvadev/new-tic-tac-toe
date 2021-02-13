@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { Main, BoxData, Label, Input, Select } from "./styles";
 import ButtonComponents from "../../components/button";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import * as PlayerActions from "../../store/players/actions";
 import { Player } from "../../store/players/types";
+import ErrorMessage from "../../components/errorMessage";
 
 function InputData({ players }: any) {
   const [player1, setPlayer1] = useState("");
   const [player2, setPlayer2] = useState("");
   const [symbol, setSymbol] = useState("true");
+  const [displayError, setDisplayError] = useState("none");
+  const [displaySend, setDisplaySend] = useState("block");
+  const [displayPlay, setDisplayPlay] = useState("none");
 
   const newPlayer: Player = {
     players: {
@@ -18,6 +21,16 @@ function InputData({ players }: any) {
       player2: player2,
       symbol: symbol,
     },
+  };
+
+  const hasPlayers = () => {
+    if (!player1 || !player2) {
+      return setDisplayError("block");
+    } else {
+      setDisplaySend('none')
+      setDisplayPlay('block')
+      return players(newPlayer);
+    }
   };
 
   return (
@@ -30,7 +43,6 @@ function InputData({ players }: any) {
             name="player1"
             id="player1"
             placeholder="Jogador 1"
-            minLength={1}
             maxLength={5}
             value={player1}
             onChange={(e) => setPlayer1(e.target.value)}
@@ -48,6 +60,10 @@ function InputData({ players }: any) {
           </Select>
         </div>
       </BoxData>
+      <ErrorMessage
+        display={displayError}
+        children="Informe os nomes dos jogadores."
+      />
       <BoxData>
         <Label>Informe o nome do jogador 2.</Label>
         <Input
@@ -55,15 +71,23 @@ function InputData({ players }: any) {
           name="player2"
           id="player2"
           placeholder="Jogador 2"
-          minLength={1}
           maxLength={5}
           value={player2}
           onChange={(e) => setPlayer2(e.target.value)}
         />
       </BoxData>
-      <Link to="/game">
-        <ButtonComponents children="Jogar" onClick={() => players(newPlayer)} />
-      </Link>
+      <ButtonComponents
+        bgColor="#47B821"
+        display={displaySend}
+        children="Enviar"
+        onClick={() => hasPlayers()}
+      />
+      <ButtonComponents
+        bgColor="#F0A230"
+        display={displayPlay}
+        children="Jogar"
+        onClick={() => (window.location.href = "/game")}
+      />
     </Main>
   );
 }

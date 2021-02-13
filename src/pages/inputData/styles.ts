@@ -50,3 +50,8 @@ export const Select = styled.select`
 		font-size: 16px;
 	}
 `;
+
+export const BoxButton = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
