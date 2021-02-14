@@ -7,7 +7,7 @@ import * as PlayerActions from "../../store/players/actions";
 import { Player } from "../../store/players/types";
 import ErrorMessage from "../../components/errorMessage";
 
-function InputData({ players }: any) {
+function InputData({ playersDispatch }: any) {
   const [player1, setPlayer1] = useState("");
   const [player2, setPlayer2] = useState("");
   const [symbol, setSymbol] = useState("true");
@@ -29,7 +29,7 @@ function InputData({ players }: any) {
     } else {
       setDisplaySend('none')
       setDisplayPlay('block')
-      return players(newPlayer);
+      return playersDispatch(newPlayer);
     }
   };
 
@@ -94,7 +94,7 @@ function InputData({ players }: any) {
 
 function mapDispatchToProps(dispatch: Dispatch) {
   return {
-    players: (newPlayer: Player) =>
+    playersDispatch: (newPlayer: Player) =>
       dispatch(PlayerActions.changeNamePlayers(newPlayer)),
   };
 }

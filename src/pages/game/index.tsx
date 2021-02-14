@@ -19,9 +19,9 @@ function Field(props: any) {
   );
 }
 
-function Game({ player }: any) {
+function Game({ playerState }: any) {
   const [field, setField] = useState(Array(9).fill(null));
-  const [symbol, setSymbol] = useState(player);
+  const [symbol, setSymbol] = useState(playerState.players.symbol);
   console.log('game', symbol)
 
   const fillField = (fieldValue: number) => {
@@ -35,11 +35,11 @@ function Game({ player }: any) {
   return (
     <Main>
       <BoxScore>
-        <ScoreStyle>{player.players.player1}:</ScoreStyle>
-        <ScoreStyle>{player.score.player1}</ScoreStyle>
+        <ScoreStyle>{playerState.players.player1}:</ScoreStyle>
+        <ScoreStyle>{playerState.score.player1}</ScoreStyle>
         <ScoreStyle>X</ScoreStyle>
-        <ScoreStyle>{player.score.player2}</ScoreStyle>
-        <ScoreStyle>:{player.players.player2}</ScoreStyle>
+        <ScoreStyle>{playerState.score.player2}</ScoreStyle>
+        <ScoreStyle>:{playerState.players.player2}</ScoreStyle>
       </BoxScore>
       <div>
         <div>
@@ -68,7 +68,7 @@ function Game({ player }: any) {
 
 function mapStateToProps(state: StateProps) {
   return {
-    player: state.playerReducer,
+    playerState: state.playerReducer,
   };
 }
 
