@@ -22,7 +22,6 @@ function Field(props: any) {
 function Game({ playerState }: any) {
   const [field, setField] = useState(Array(9).fill(null));
   const [symbol, setSymbol] = useState(playerState.players.symbol);
-  console.log('game', symbol)
 
   const fillField = (fieldValue: number) => {
     const newField  = field.slice();
