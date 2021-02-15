@@ -12,11 +12,7 @@ export interface StateProps {
 }
 
 function Field(props: any) {
-  return (
-      <House onClick={props.onClick}>
-        {props.text}
-      </House>
-  );
+  return <House onClick={props.onClick}>{props.text}</House>;
 }
 
 function Game({ playerState }: any) {
@@ -24,13 +20,13 @@ function Game({ playerState }: any) {
   const [symbol, setSymbol] = useState(playerState.players.symbol);
 
   const fillField = (fieldValue: number) => {
-    const newField  = field.slice();
-    newField[fieldValue] = symbol ? 'X' : 'O';
-    
+    const newField = field.slice();
+    newField[fieldValue] = symbol === true || symbol === "true" ? "X" : "O";
+
     setField(newField);
     setSymbol(!symbol);
-  }
-  
+  };
+
   return (
     <Main>
       <BoxScore>
