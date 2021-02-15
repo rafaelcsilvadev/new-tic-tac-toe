@@ -1,5 +1,10 @@
 import styled from "styled-components/macro";
 
+interface Props {
+  color?: string;
+}
+
+
 export const Main = styled.main`
   width: 100vw;
   height: 100vh;
@@ -21,10 +26,11 @@ export const BoxScore = styled.div`
   }
 `;
 
-export const ScoreStyle = styled.span`
+export const ScoreStyle = styled.span<Props>`
   font-size: 16px;
   padding: 0 10px;
   text-align: center;
+  color: ${props => props.color};
 
   @media screen and (min-width: 400px) {
     font-size: 20px;

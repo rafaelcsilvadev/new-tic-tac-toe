@@ -18,6 +18,7 @@ function Field(props: any) {
 function Game({ playerState }: any) {
   const [field, setField] = useState(Array(9).fill(null));
   const [symbol, setSymbol] = useState(playerState.players.symbol);
+  const [nextPlayer, setNextPlayer] = useState(true);
 
   const fillField = (fieldValue: number) => {
     const newField = field.slice();
@@ -25,16 +26,21 @@ function Game({ playerState }: any) {
 
     setField(newField);
     setSymbol(!symbol);
+    setNextPlayer(!nextPlayer);
   };
 
   return (
     <Main>
       <BoxScore>
-        <ScoreStyle>{playerState.players.player1}:</ScoreStyle>
+        <ScoreStyle color={nextPlayer ? "#47B821" : "#fff"}>
+          {playerState.players.player1}
+        </ScoreStyle>
         <ScoreStyle>{playerState.score.player1}</ScoreStyle>
         <ScoreStyle>X</ScoreStyle>
         <ScoreStyle>{playerState.score.player2}</ScoreStyle>
-        <ScoreStyle>:{playerState.players.player2}</ScoreStyle>
+        <ScoreStyle color={nextPlayer ? "#fff" : "#47B821"}>
+          {playerState.players.player2}
+        </ScoreStyle>
       </BoxScore>
       <div>
         <div>
@@ -54,8 +60,16 @@ function Game({ playerState }: any) {
         </div>
       </div>
       <BoxButton>
-        <Button bgColor="#47B821" children="Novo Jogo" />
-        <Button bgColor="#47B821" children="Mudar Jogadores" />
+        <Button
+          bgColor="#47B821"
+          children="Novo Jogo"
+          onClick={() => setField(Array(9).fill(null))}
+        />
+        <Button
+          bgColor="#47B821"
+          children="Mudar Jogadores"
+          onClick={() => (window.location.href = "/")}
+        />
       </BoxButton>
     </Main>
   );
