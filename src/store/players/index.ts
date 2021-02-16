@@ -22,8 +22,8 @@ function playerReducer(state = INITIAL_STATE, action: PlayerActionsState) {
           symbol: action.players.symbol,
         },
         score: {
-          player1: state.score.player1,
-          player2: state.score.player2,
+          player1: 0,
+          player2: 0,
         },
       };
     case PlayerActions.POINTS_PLAYER1:
