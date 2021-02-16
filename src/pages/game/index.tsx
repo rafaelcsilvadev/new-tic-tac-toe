@@ -11,7 +11,7 @@ import {
 import Button from "../../components/button";
 import { connect } from "react-redux";
 import { Player, Score } from "../../store/players/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export interface StateProps {
   playerReducer: {
@@ -27,6 +27,14 @@ function Game({ playerState }: any) {
   const [winDisplay, setWinDisplay] = useState("none");
   const [squaresDisplay, setSquaresDisplay] = useState("block");
   const [winMessage, setWinMessage] = useState("");
+
+  useEffect(() => {
+    if (symbol === "true") {
+      setSymbol(true);
+    } else {
+      setSymbol(false);
+    }
+  }, []);
 
   const hasWinner = (newField: Array<null | string>) => {
     const condition = [
@@ -47,19 +55,22 @@ function Game({ playerState }: any) {
         newField[a] === newField[b] &&
         newField[a] === newField[c]
       ) {
-        setWinDisplay("block");
-        setSquaresDisplay("none");
-
         if (nextPlayer) {
+          setWinDisplay("flex");
+          setSquaresDisplay("none");
           return setWinMessage(
             `O jogador ${playerState.players.player1} ganhou.`
           );
         } else {
+          setWinDisplay("flex");
+          setSquaresDisplay("none");
           return setWinMessage(
             `O jogador ${playerState.players.player2} ganhou.`
           );
         }
       } else if (!newField.some((e) => e === null)) {
+        setWinDisplay("flex");
+        setSquaresDisplay("none");
         return setWinMessage("Velha");
       } else {
         return false;
@@ -74,7 +85,7 @@ function Game({ playerState }: any) {
       return;
     }
 
-    newField[fieldValue] = symbol === true || symbol === "true" ? "X" : "O";
+    newField[fieldValue] = symbol === true ? "X" : "O";
 
     setField(newField);
     setSymbol(!symbol);

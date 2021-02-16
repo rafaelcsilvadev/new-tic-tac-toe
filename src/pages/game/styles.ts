@@ -59,12 +59,11 @@ export const BoxButton = styled.div`
   flex-direction: row;
 `;
 
-export const BoxWin = styled.div<Props>`
-  display: ${(props) => props.display};
+export const BoxWin = styled.div<Props>`  
   width: 298px;
   height: 298px;
   border: 2px solid #fff;
-  display: flex;
+  display: ${(props) => props.display};
   flex-direction: column;
   align-items: center;
   justify-content: center;
