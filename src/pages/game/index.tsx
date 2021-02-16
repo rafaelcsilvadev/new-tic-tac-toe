@@ -10,31 +10,42 @@ import {
 } from "./styles";
 import Button from "../../components/button";
 import { connect } from "react-redux";
-import { Player, Score } from "../../store/players/types";
-import { useEffect, useState } from "react";
+import { Dispatch } from "redux";
+import { PlayerState } from "../../store/players/types";
+import { useState } from "react";
+import * as PlayerActions from "../../store/players/actions";
 
 export interface StateProps {
-  playerReducer: {
-    players: Player;
-    score: Score;
-  };
+  playerReducer: PlayerState;
 }
 
-function Game({ playerState }: any) {
+function Game({
+  playerState,
+  scoreDispatchPlayer1,
+  scoreDispatchPlayer2,
+}: any) {
   const [field, setField] = useState(Array(9).fill(null));
-  const [symbol, setSymbol] = useState(playerState.players.symbol);
+  const [symbol, setSymbol] = useState(
+    playerState.players.symbol === "true"
+      ? (playerState.players.symbol = true)
+      : (playerState.players.symbol = false)
+  );
   const [nextPlayer, setNextPlayer] = useState(true);
   const [winDisplay, setWinDisplay] = useState("none");
   const [squaresDisplay, setSquaresDisplay] = useState("block");
   const [winMessage, setWinMessage] = useState("");
 
-  useEffect(() => {
-    if (symbol === "true") {
-      setSymbol(true);
-    } else {
-      setSymbol(false);
-    }
-  }, []);
+  const newScore: PlayerState = {
+    players: {
+      player1: playerState.players.player1,
+      player2: playerState.players.player2,
+      symbol: symbol,
+    },
+    score: {
+      player1: playerState.score.player1,
+      player2: playerState.score.player2,
+    },
+  };
 
   const hasWinner = (newField: Array<null | string>) => {
     const condition = [
@@ -58,12 +69,14 @@ function Game({ playerState }: any) {
         if (nextPlayer) {
           setWinDisplay("flex");
           setSquaresDisplay("none");
+          scoreDispatchPlayer1(newScore);
           return setWinMessage(
             `O jogador ${playerState.players.player1} ganhou.`
           );
         } else {
           setWinDisplay("flex");
           setSquaresDisplay("none");
+          scoreDispatchPlayer2(newScore);
           return setWinMessage(
             `O jogador ${playerState.players.player2} ganhou.`
           );
@@ -80,14 +93,19 @@ function Game({ playerState }: any) {
 
   const fillField = (fieldValue: number) => {
     const newField = field.slice();
-
-    if (hasWinner(newField) || newField[fieldValue]) {
+    if (newField[fieldValue]) {
       return;
     }
 
     newField[fieldValue] = symbol === true ? "X" : "O";
-
     setField(newField);
+
+    setTimeout(() => {
+      if (hasWinner(newField)) {
+        return;
+      }
+    }, 500);
+
     setSymbol(!symbol);
     setNextPlayer(!nextPlayer);
   };
@@ -129,7 +147,11 @@ function Game({ playerState }: any) {
         <Button
           bgColor="#47B821"
           children="Novo Jogo"
-          onClick={() => setField(Array(9).fill(null))}
+          onClick={() => {
+            setWinDisplay("none");
+            setSquaresDisplay("block");
+            setField(Array(9).fill(null));
+          }}
         />
         <Button
           bgColor="#47B821"
@@ -147,4 +169,13 @@ function mapStateToProps(state: StateProps) {
   };
 }
 
-export default connect(mapStateToProps, null)(Game);
+function mapDispatchToProps(dispatch: Dispatch) {
+  return {
+    scoreDispatchPlayer1: (newPlayer: PlayerState) =>
+      dispatch(PlayerActions.addPointPlayer1(newPlayer)),
+    scoreDispatchPlayer2: (newPlayer: PlayerState) =>
+      dispatch(PlayerActions.addPointPlayer2(newPlayer)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Game);

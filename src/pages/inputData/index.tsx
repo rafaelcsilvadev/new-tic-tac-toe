@@ -4,7 +4,7 @@ import ButtonComponents from "../../components/button";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import * as PlayerActions from "../../store/players/actions";
-import { Player } from "../../store/players/types";
+import { PlayerState } from "../../store/players/types";
 import ErrorMessage from "../../components/errorMessage";
 
 function InputData({ playersDispatch }: any) {
@@ -15,11 +15,15 @@ function InputData({ playersDispatch }: any) {
   const [displaySend, setDisplaySend] = useState("block");
   const [displayPlay, setDisplayPlay] = useState("none");
 
-  const newPlayer: Player = {
+  const newPlayer: PlayerState = {
     players: {
       player1: player1,
       player2: player2,
       symbol: symbol,
+    },
+    score: {
+      player1: 0,
+      player2: 0,
     },
   };
 
@@ -94,7 +98,7 @@ function InputData({ playersDispatch }: any) {
 
 function mapDispatchToProps(dispatch: Dispatch) {
   return {
-    playersDispatch: (newPlayer: Player) =>
+    playersDispatch: (newPlayer: PlayerState) =>
       dispatch(PlayerActions.changeNamePlayers(newPlayer)),
   };
 }

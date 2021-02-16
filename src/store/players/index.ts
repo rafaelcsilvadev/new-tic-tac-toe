@@ -15,7 +15,6 @@ const INITIAL_STATE: PlayerState = {
 function playerReducer(state = INITIAL_STATE, action: PlayerActionsState) {
   switch (action.type) {
     case PlayerActions.CHANGE_PLAYER:
-      console.log('oi')
       return {
         players: {
           player1: action.players.player1.substr(0, 5),

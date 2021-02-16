@@ -28,18 +28,3 @@ export interface PlayerActionsState {
         player2: number
     }
 }
-
-export interface Player{
-    players: {
-        player1: string,
-        player2: string,
-        symbol: string | boolean
-    }
-}
-
-export interface Score {
-  score: {
-    player1: number,
-    player2: number
-  };
-}

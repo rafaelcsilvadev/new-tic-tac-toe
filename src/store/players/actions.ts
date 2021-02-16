@@ -1,6 +1,10 @@
-import { Player, PlayerActions, PlayerActionsState } from "../../store/players/types";
+import {
+  PlayerActions,
+  PlayerActionsState,
+  PlayerState,
+} from "../../store/players/types";
 
-export function changeNamePlayers(newPlayer: Player): PlayerActionsState {
+export function changeNamePlayers(newPlayer: PlayerState): PlayerActionsState {
   return {
     type: PlayerActions.CHANGE_PLAYER,
     players: {
@@ -9,8 +13,38 @@ export function changeNamePlayers(newPlayer: Player): PlayerActionsState {
       symbol: newPlayer.players.symbol,
     },
     score: {
-      player1: 0,
-      player2: 0,
+      player1: newPlayer.score.player1,
+      player2: newPlayer.score.player2,
+    },
+  };
+}
+
+export function addPointPlayer1(addPoint: PlayerState): PlayerActionsState {
+  return {
+    type: PlayerActions.POINTS_PLAYER1,
+    players: {
+      player1: addPoint.players.player1,
+      player2: addPoint.players.player2,
+      symbol: addPoint.players.symbol,
+    },
+    score: {
+      player1: addPoint.score.player1,
+      player2: addPoint.score.player2,
+    },
+  };
+}
+
+export function addPointPlayer2(addPoint: PlayerState): PlayerActionsState {
+  return {
+    type: PlayerActions.POINTS_PLAYER2,
+    players: {
+      player1: addPoint.players.player1,
+      player2: addPoint.players.player2,
+      symbol: addPoint.players.symbol,
+    },
+    score: {
+      player1: addPoint.score.player1,
+      player2: addPoint.score.player2,
     },
   };
 }
