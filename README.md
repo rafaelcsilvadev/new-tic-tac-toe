@@ -1,46 +1,99 @@
-# Getting Started with Create React App
+<h2>    
+    Jogo da Velha
+</h2>
+<p>
+    O famoso jogo da velha.
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div>
+    <img src="https://img.shields.io/static/v1?label=licenca&message=MIT&color=A3A3A3&style=flat">
+    <img src="https://img.shields.io/static/v1?label=npm&message=6.14.5&color=A3A3A3&style=flat">
+    <img src="https://img.shields.io/static/v1?label=yarn&message=1.22.4&color=A3A3A3&style=flat">
+    <img src="https://img.shields.io/static/v1?label=react&message=17.0.1&color=A3A3A3&style=flat">
+    <img src="https://img.shields.io/static/v1?label=next&message=10.0.3&color=A3A3A3&style=flat">
+    <img src="https://img.shields.io/static/v1?label=sass&message=5.0.0&color=A3A3A3&style=flat">
+</div>
 
-## Available Scripts
+<p>
+    <a href="#objective">
+        Objetivo
+    </a> •
+    <a href="#technologies">
+        Tecnologias
+    </a> • 
+    <a href="#author">
+        Autor
+    </a>
+</p>
 
-In the project directory, you can run:
+<p> 
+	✔️ Jogo da Velha 😃 Finalizado ✔️
+</p>
 
-### `yarn start`
+<div>
+    <img src="./github/captura.png">
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h2 id='objective'>Objetivo</h2>
+<p>
+    Esse jogo foi feito para praticar de demonstrar minhas habilidades usando React, Redux e TypeScript.
+</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h2 id='technologies'>
+    Tecnologias
+</h2>
+<ul>
+    <li>
+        <a href="reactjs.org/">React</a>
+    </li>
+    <li>
+        <a href="styled-components.com">Styled Components</a>
+    </li>
+    <li>
+        <a href="redux.js.org/">Redux</a>
+    </li>
+    <li>
+        <a href="typescriptlang.org">TypeScript</a>
+    </li>
+</ul>
 
-### `yarn test`
+<h2>
+    Link do projeto:
+</h2>
+<p>
+    <a href="https://rafael-tic-tac-toe.herokuapp.com/">https://rafael-tic-tac-toe.herokuapp.com/</a>
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2 id="author">
+    Autor: Rafael Couto
+</h2>
+<img src="./github/autor.jpg" alt="" width="100px">
+<p>
+    Desenvolvedor front-end júnior, apaixonado pela área e por resolver problemas.
+</p>
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2>Contatos:</h2>
+<ul>
+    <li>
+        Telefone: <a href="https://api.whatsapp.com/send?phone=5524999644346">
+            (24) 9 9964-4346
+        </a> 
+    </li>
+    <li>
+        Email: <a href="mailto:rafaelcsilva016@outlook.com">
+            rafaelcsilva016@outlook.com
+        </a>
+    </li>
+    <li>
+        LinkedIn:
+        <a href="linkedin.com/in/rcs-frontend/">
+            Rafael Couto Silva
+        </a>
+    </li>
+    <li>
+        GitHub:
+        <a href="gist.github.com/rafaelcsilvadev">
+            rafaelcsilvadev
+        </a>
+    </li>
+</ul>
