@@ -14,29 +14,13 @@
     <img src="https://img.shields.io/static/v1?label=sass&message=5.0.0&color=A3A3A3&style=flat">
 </div>
 
-<p>
-    <a href="#objective">
-        Objetivo
-    </a> •
-    <a href="#technologies">
-        Tecnologias
-    </a> • 
-    <a href="#author">
-        Autor
-    </a>
-</p>
-
-<p> 
-	✔️ Jogo da Velha 😃 Finalizado ✔️
-</p>
-
 <div>
     <img src="./github/captura.png">
 </div>
 
 <h2 id='objective'>Objetivo</h2>
 <p>
-    Esse jogo foi feito para praticar de demonstrar minhas habilidades usando React, Redux e TypeScript.
+    Esse jogo foi feito para praticar e demonstrar minhas habilidades com React, Redux e TypeScript.
 </p>
 
 <h2 id='technologies'>
