@@ -1,9 +1,9 @@
 import styled from "styled-components/macro";
 
 interface Props {
-  color?: string;
+  color?: string,
+  display?: string
 }
-
 
 export const Main = styled.main`
   width: 100vw;
@@ -30,7 +30,7 @@ export const ScoreStyle = styled.span<Props>`
   font-size: 16px;
   padding: 0 10px;
   text-align: center;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
 
   @media screen and (min-width: 400px) {
     font-size: 20px;
@@ -57,4 +57,28 @@ export const House = styled.button`
 export const BoxButton = styled.div`
   display: flex;
   flex-direction: row;
+`;
+
+export const BoxWin = styled.div<Props>`
+  display: ${(props) => props.display};
+  width: 298px;
+  height: 298px;
+  border: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const BoxSquares = styled.div<Props>`
+  display: ${(props) => props.display};
+`;
+
+export const Text = styled.span`
+  font-size: 16px;
+  color: #3df024;
+
+  @media screen and (min-width: 400px) {
+    font-size: 20px;
+  }
 `;
