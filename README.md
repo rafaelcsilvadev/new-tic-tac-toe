@@ -6,15 +6,6 @@
 </p>
 
 <div>
-    <img src="https://img.shields.io/static/v1?label=licenca&message=MIT&color=A3A3A3&style=flat">
-    <img src="https://img.shields.io/static/v1?label=npm&message=6.14.5&color=A3A3A3&style=flat">
-    <img src="https://img.shields.io/static/v1?label=yarn&message=1.22.4&color=A3A3A3&style=flat">
-    <img src="https://img.shields.io/static/v1?label=react&message=17.0.1&color=A3A3A3&style=flat">
-    <img src="https://img.shields.io/static/v1?label=next&message=10.0.3&color=A3A3A3&style=flat">
-    <img src="https://img.shields.io/static/v1?label=sass&message=5.0.0&color=A3A3A3&style=flat">
-</div>
-
-<div>
     <img src="./github/captura.png">
 </div>
 
