@@ -61,7 +61,7 @@
     Link do projeto:
 </h2>
 <p>
-    <a href="https://rafael-tic-tac-toe.herokuapp.com/">https://rafael-tic-tac-toe.herokuapp.com/</a>
+    <a href="https://rafa-new-tic-tac-toe.herokuapp.com/">New Tic-Tac-Toe</a>
 </p>
 
 <h2 id="author">
