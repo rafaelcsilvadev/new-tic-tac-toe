@@ -63,37 +63,3 @@
 <p>
     <a href="https://rafa-new-tic-tac-toe.herokuapp.com/">New Tic-Tac-Toe</a>
 </p>
-
-<h2 id="author">
-    Autor: Rafael Couto
-</h2>
-<img src="./github/autor.jpg" alt="" width="100px">
-<p>
-    Desenvolvedor front-end júnior, apaixonado pela área e por resolver problemas.
-</p>
-
-<h2>Contatos:</h2>
-<ul>
-    <li>
-        Telefone: <a href="https://api.whatsapp.com/send?phone=5524999644346">
-            (24) 9 9964-4346
-        </a> 
-    </li>
-    <li>
-        Email: <a href="mailto:rafaelcsilva016@outlook.com">
-            rafaelcsilva016@outlook.com
-        </a>
-    </li>
-    <li>
-        LinkedIn:
-        <a href="linkedin.com/in/rcs-frontend/">
-            Rafael Couto Silva
-        </a>
-    </li>
-    <li>
-        GitHub:
-        <a href="gist.github.com/rafaelcsilvadev">
-            rafaelcsilvadev
-        </a>
-    </li>
-</ul>
