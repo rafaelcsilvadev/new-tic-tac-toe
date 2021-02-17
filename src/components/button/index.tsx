@@ -4,14 +4,13 @@ interface Props {
 	type?: any,
 	onClick?: any,
 	children: string,
-	display?: string,
 	bgColor?: string
 
 }
 
-function ButtonComponents({ type, onClick, children, display, bgColor }: Props) {
+function ButtonComponents({ type, onClick, children, bgColor }: Props) {
 	return (
-		<Button type={type} onClick={onClick} display={display} bgColor={bgColor}>
+		<Button type={type} onClick={onClick} bgColor={bgColor}>
 			{children}
 		</Button>
 	);

@@ -1,7 +1,6 @@
 import styled from 'styled-components/macro';
 
 interface Props {
-  display?: string,
   bgColor?: string
 }
 
@@ -13,7 +12,6 @@ export const Button = styled.button<Props>`
   color: #fff;
   font-size: 14px;
   outline: none;
-  display: ${(props) => props.display};
 
   &:hover {
     opacity: 0.8;

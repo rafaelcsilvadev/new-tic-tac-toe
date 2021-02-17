@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Main, BoxData, Label, Input, Select } from "./styles";
+import React, { FormEvent, useState } from "react";
+import { Main, BoxData, Label, Input, Select, Form } from "./styles";
 import ButtonComponents from "../../components/button";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
@@ -12,8 +12,6 @@ function InputData({ playersDispatch }: any) {
   const [player2, setPlayer2] = useState("");
   const [symbol, setSymbol] = useState("true");
   const [displayError, setDisplayError] = useState("none");
-  const [displaySend, setDisplaySend] = useState("block");
-  const [displayPlay, setDisplayPlay] = useState("none");
 
   const newPlayer: PlayerState = {
     players: {
@@ -27,71 +25,67 @@ function InputData({ playersDispatch }: any) {
     },
   };
 
-  const hasPlayers = () => {
-    if (!player1 || !player2) {
-      return setDisplayError("block");
-    } else {
-      setDisplaySend('none')
-      setDisplayPlay('block')
-      return playersDispatch(newPlayer);
+  const handleSavePlayers = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if(!player1 || !player2){
+      setDisplayError("block");
     }
-  };
+    else {
+      playersDispatch(newPlayer);
+      window.location.href = "/game";
+    }
+  }
 
   return (
     <Main>
-      <BoxData>
-        <Label>Informe o nome e símbolo do jogador 1.</Label>
-        <div>
+      <Form onSubmit={handleSavePlayers}>
+        <BoxData>
+          <Label>Informe o nome e símbolo do jogador 1.</Label>
+          <div>
+            <Input
+              type="text"
+              name="player1"
+              id="player1"
+              placeholder="Jogador 1"
+              maxLength={5}
+              value={player1}
+              onChange={(e) => setPlayer1(e.target.value)}
+            />
+            <Select
+              name="symbol"
+              id="symbol"
+              value={symbol}
+              onChange={(e) => setSymbol(e.target.value)}
+            >
+              <option defaultChecked value="true">
+                X
+              </option>
+              <option value="false">O</option>
+            </Select>
+          </div>
+        </BoxData>
+        <ErrorMessage
+          display={displayError}
+          children="Informe os nomes dos jogadores."
+        />
+        <BoxData>
+          <Label>Informe o nome do jogador 2.</Label>
           <Input
             type="text"
-            name="player1"
-            id="player1"
-            placeholder="Jogador 1"
+            name="player2"
+            id="player2"
+            placeholder="Jogador 2"
             maxLength={5}
-            value={player1}
-            onChange={(e) => setPlayer1(e.target.value)}
+            value={player2}
+            onChange={(e) => setPlayer2(e.target.value)}
           />
-          <Select
-            name="symbol"
-            id="symbol"
-            value={symbol}
-            onChange={(e) => setSymbol(e.target.value)}
-          >
-            <option defaultChecked value="true">
-              X
-            </option>
-            <option value="false">O</option>
-          </Select>
-        </div>
-      </BoxData>
-      <ErrorMessage
-        display={displayError}
-        children="Informe os nomes dos jogadores."
-      />
-      <BoxData>
-        <Label>Informe o nome do jogador 2.</Label>
-        <Input
-          type="text"
-          name="player2"
-          id="player2"
-          placeholder="Jogador 2"
-          maxLength={5}
-          value={player2}
-          onChange={(e) => setPlayer2(e.target.value)}
+        </BoxData>
+        <ButtonComponents
+          type="submit"
+          bgColor="#47B821"
+          children="Enviar"
         />
-      </BoxData>
-      <ButtonComponents
-        bgColor="#47B821"
-        display={displaySend}
-        children="Enviar"
-        onClick={() => hasPlayers()}
-      />
-      <ButtonComponents
-        bgColor="#F0A230"
-        display={displayPlay}
-        children="Jogar"
-        onClick={() => (window.location.href = "/game")}
-      />
+      </Form>
     </Main>
   );
 }

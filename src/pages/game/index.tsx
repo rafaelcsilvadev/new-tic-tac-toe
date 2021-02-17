@@ -14,6 +14,7 @@ import { Dispatch } from "redux";
 import { PlayerState } from "../../store/players/types";
 import { useState } from "react";
 import * as PlayerActions from "../../store/players/actions";
+import { Link } from "react-router-dom";
 
 export interface StateProps {
   playerReducer: PlayerState;
@@ -110,6 +111,12 @@ function Game({
     setNextPlayer(!nextPlayer);
   };
 
+  const newGame = () => {
+    setWinDisplay("none");
+    setSquaresDisplay("block");
+    setField(Array(9).fill(null));
+  };
+
   return (
     <Main>
       <BoxScore>
@@ -147,17 +154,11 @@ function Game({
         <Button
           bgColor="#47B821"
           children="Novo Jogo"
-          onClick={() => {
-            setWinDisplay("none");
-            setSquaresDisplay("block");
-            setField(Array(9).fill(null));
-          }}
+          onClick={() => newGame()}
         />
-        <Button
-          bgColor="#47B821"
-          children="Mudar Jogadores"
-          onClick={() => (window.location.href = "/")}
-        />
+        <Link to="/">
+          <Button bgColor="#47B821" children="Mudar Jogadores" />
+        </Link>
       </BoxButton>
     </Main>
   );
