@@ -132,13 +132,11 @@ function Squares({
         <Text>{winMessage}</Text>
       </BoxWin>
       <BoxButton>
-        <Button
-          bgColor="#47B821"
-          children="Novo Jogo"
-          onClick={() => newGame()}
-        />
+        <Button bgColor="#47B821" onClick={() => newGame()}>
+          Novo Jogo
+        </Button>
         <Link to="/">
-          <Button bgColor="#47B821" children="Mudar Jogadores" />
+          <Button bgColor="#47B821">Mudar Jogadores</Button>
         </Link>
       </BoxButton>
     </Section>

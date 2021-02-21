@@ -80,11 +80,9 @@ function InputData({ playersDispatch }: any) {
             onChange={(e) => setPlayer2(e.target.value)}
           />
         </BoxData>
-        <ButtonComponents
-          type="submit"
-          bgColor="#47B821"
-          children="Enviar"
-        />
+        <ButtonComponents type="submit" bgColor="#47B821">
+          Enviar
+        </ButtonComponents>
       </Form>
     </Main>
   );
