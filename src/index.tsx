@@ -9,8 +9,8 @@ render(
   <StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-		<App />
-	  </PersistGate>      
+        <App />
+      </PersistGate>
     </Provider>
   </StrictMode>,
   document.querySelector("#root")
