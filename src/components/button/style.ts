@@ -1,9 +1,8 @@
 import styled from 'styled-components/macro';
 
 interface Props {
-  bgColor?: string
+  bgColor?: string;
 }
-
 
 export const Button = styled.button<Props>`
   margin: 20px 10px;

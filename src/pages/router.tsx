@@ -1,9 +1,9 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import InputData from "./inputData";
+import InputData from './inputData';
 import Game from './game';
 
 export default function Router() {
-	return (
+  return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={InputData} />

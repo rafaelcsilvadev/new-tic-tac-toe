@@ -1,8 +1,8 @@
-import { Main } from "./styles";
+import { Main } from './styles';
 import Score from '../../components/score';
 import Squares from '../../components/squares';
 
-function Game() { 
+function Game() {
   return (
     <Main>
       <Score />
@@ -10,6 +10,5 @@ function Game() {
     </Main>
   );
 }
-
 
 export default Game;

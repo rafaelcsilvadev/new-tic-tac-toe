@@ -2,7 +2,7 @@ import {
   PlayerActions,
   PlayerActionsState,
   PlayerState,
-} from "../../store/players/types";
+} from '../../store/players/types';
 
 export function changeNamePlayers(newPlayer: PlayerState): PlayerActionsState {
   return {
@@ -48,4 +48,3 @@ export function addPointPlayer2(addPoint: PlayerState): PlayerActionsState {
     },
   };
 }
-

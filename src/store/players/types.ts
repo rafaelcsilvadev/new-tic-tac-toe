@@ -1,7 +1,7 @@
 export enum PlayerActions {
-  CHANGE_PLAYER = "@players/change_players",
-  POINTS_PLAYER1 = "@Players/points_player1",
-  POINTS_PLAYER2 = "@players/points_player2",
+  CHANGE_PLAYER = '@players/change_players',
+  POINTS_PLAYER1 = '@Players/points_player1',
+  POINTS_PLAYER2 = '@players/points_player2',
 }
 
 export interface PlayerState {

@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import { PlayerState } from "../../store/players/types";
-import { Section, BoxScore, ScoreStyle } from "./styles";
+import { connect } from 'react-redux';
+import { PlayerState } from '../../store/players/types';
+import { Section, BoxScore, ScoreStyle } from './styles';
 
 interface StateProps {
   playerReducer: PlayerState;
@@ -14,13 +14,13 @@ function Score({ playerState }: any, props: Props) {
   return (
     <Section>
       <BoxScore>
-        <ScoreStyle color={props.nextPlayer ? "#3DF024" : "#fff"}>
+        <ScoreStyle color={props.nextPlayer ? '#3DF024' : '#fff'}>
           {playerState.players.player1}
         </ScoreStyle>
         <ScoreStyle>{playerState.score.player1}</ScoreStyle>
         <ScoreStyle>X</ScoreStyle>
         <ScoreStyle>{playerState.score.player2}</ScoreStyle>
-        <ScoreStyle color={props.nextPlayer ? "#fff" : "#3DF024"}>
+        <ScoreStyle color={props.nextPlayer ? '#fff' : '#3DF024'}>
           {playerState.players.player2}
         </ScoreStyle>
       </BoxScore>

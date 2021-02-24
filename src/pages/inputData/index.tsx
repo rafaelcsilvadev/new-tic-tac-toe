@@ -1,17 +1,17 @@
-import React, { FormEvent, useState } from "react";
-import { Main, BoxData, Label, Input, Select, Form } from "./styles";
-import ButtonComponents from "../../components/button";
-import { connect } from "react-redux";
-import { Dispatch } from "redux";
-import * as PlayerActions from "../../store/players/actions";
-import { PlayerState } from "../../store/players/types";
-import ErrorMessage from "../../components/errorMessage";
+import React, { FormEvent, useState } from 'react';
+import { Main, BoxData, Label, Input, Select, Form } from './styles';
+import ButtonComponents from '../../components/button';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import * as PlayerActions from '../../store/players/actions';
+import { PlayerState } from '../../store/players/types';
+import ErrorMessage from '../../components/errorMessage';
 
 function InputData({ playersDispatch }: any) {
-  const [player1, setPlayer1] = useState("");
-  const [player2, setPlayer2] = useState("");
-  const [symbol, setSymbol] = useState("true");
-  const [displayError, setDisplayError] = useState("none");
+  const [player1, setPlayer1] = useState('');
+  const [player2, setPlayer2] = useState('');
+  const [symbol, setSymbol] = useState('true');
+  const [displayError, setDisplayError] = useState('none');
 
   const newPlayer: PlayerState = {
     players: {
@@ -27,14 +27,13 @@ function InputData({ playersDispatch }: any) {
 
   const handleSavePlayers = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if(!player1 || !player2){
-      setDisplayError("block");
-    }
-    else {
+    if (!player1 || !player2) {
+      setDisplayError('block');
+    } else {
       playersDispatch(newPlayer);
-      window.location.href = "/game";
+      window.location.href = '/game';
     }
-  }
+  };
 
   return (
     <Main>
