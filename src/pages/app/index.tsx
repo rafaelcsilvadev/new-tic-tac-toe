@@ -1,3 +1,4 @@
+import React from 'react';
 import { Global } from './styles';
 import Router from '../router';
 

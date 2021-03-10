@@ -42,44 +42,42 @@ function InputData({ playersDispatch }: any) {
           <Label>Informe o nome e símbolo do jogador 1.</Label>
           <div>
             <Input
-              type="text"
-              name="player1"
-              id="player1"
-              placeholder="Jogador 1"
+              type='text'
+              name='player1'
+              id='player1'
+              placeholder='Jogador 1'
               maxLength={5}
               value={player1}
               onChange={(e) => setPlayer1(e.target.value)}
             />
             <Select
-              name="symbol"
-              id="symbol"
+              name='symbol'
+              id='symbol'
               value={symbol}
-              onChange={(e) => setSymbol(e.target.value)}
-            >
-              <option defaultChecked value="true">
+              onChange={(e) => setSymbol(e.target.value)}>
+              <option defaultChecked value='true'>
                 X
               </option>
-              <option value="false">O</option>
+              <option value='false'>O</option>
             </Select>
           </div>
         </BoxData>
-        <ErrorMessage
-          display={displayError}
-          children="Informe os nomes dos jogadores."
-        />
+        <ErrorMessage display={displayError}>
+          Informe os nomes dos jogadores.
+        </ErrorMessage>
         <BoxData>
           <Label>Informe o nome do jogador 2.</Label>
           <Input
-            type="text"
-            name="player2"
-            id="player2"
-            placeholder="Jogador 2"
+            type='text'
+            name='player2'
+            id='player2'
+            placeholder='Jogador 2'
             maxLength={5}
             value={player2}
             onChange={(e) => setPlayer2(e.target.value)}
           />
         </BoxData>
-        <ButtonComponents type="submit" bgColor="#47B821">
+        <ButtonComponents type='submit' bgColor='#47B821'>
           Enviar
         </ButtonComponents>
       </Form>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { PlayerState } from '../../store/players/types';
 import { Section, BoxScore, ScoreStyle } from './styles';

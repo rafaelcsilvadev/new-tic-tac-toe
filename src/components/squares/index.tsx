@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -132,11 +132,11 @@ function Squares({
         <Text>{winMessage}</Text>
       </BoxWin>
       <BoxButton>
-        <Button bgColor="#47B821" onClick={() => newGame()}>
+        <Button bgColor='#47B821' onClick={() => newGame()}>
           Novo Jogo
         </Button>
-        <Link to="/">
-          <Button bgColor="#47B821">Mudar Jogadores</Button>
+        <Link to='/'>
+          <Button bgColor='#47B821'>Mudar Jogadores</Button>
         </Link>
       </BoxButton>
     </Section>

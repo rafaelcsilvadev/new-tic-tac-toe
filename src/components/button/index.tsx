@@ -1,10 +1,10 @@
-import { Button } from '../button/style';
+import { Button } from './style';
 
 interface Props {
   type?: any;
-  onClick?: any;
+  onClick?: () => void;
   children: string;
-  bgColor?: string;
+  bgColor: string;
 }
 
 function ButtonComponents({ type, onClick, children, bgColor }: Props) {
