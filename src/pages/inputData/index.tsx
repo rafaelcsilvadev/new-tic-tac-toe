@@ -55,7 +55,8 @@ const InputData: React.FC = ({ playersDispatch }: any) => {
               name="symbol"
               id="symbol"
               value={symbol}
-              onChange={(e) => setSymbol(e.target.value)}>
+              onChange={(e) => setSymbol(e.target.value)}
+            >
               <option defaultChecked value="true">
                 X
               </option>
