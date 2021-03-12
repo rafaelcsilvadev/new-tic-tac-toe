@@ -7,7 +7,7 @@ interface Props {
 export const Button = styled.button<Props>`
   margin: 20px 10px;
   padding: 10px;
-  background-color: #37AD1A;
+  background-color: #37ad1a;
   color: #fff;
   font-size: 14px;
   outline: none;
