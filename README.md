@@ -1,4 +1,4 @@
-<h2>    
+<h2>
     Jogo da Velha
 </h2>
 <p>
@@ -36,5 +36,5 @@
     Link do projeto:
 </h2>
 <p>
-    <a href="https://rafa-new-tic-tac-toe.herokuapp.com/">New Tic-Tac-Toe</a>
+    <a href="https://new-tic-tac-toe.vercel.app/">New Tic-Tac-Toe</a>
 </p>
