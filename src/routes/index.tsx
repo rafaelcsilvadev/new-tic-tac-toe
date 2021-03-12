@@ -1,7 +1,7 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import InputData from '../pages/inputData';
-import Game from '../pages/game';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import InputData from "../pages/inputData";
+import Game from "../pages/game";
 
 const Router: React.FC = () => (
   <BrowserRouter>

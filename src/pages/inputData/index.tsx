@@ -1,18 +1,18 @@
-import React, { FormEvent, useState } from 'react';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
+import React, { FormEvent, useState } from "react";
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
 // eslint-disable-next-line object-curly-newline
-import { BoxData, Label, Input, Select, Form } from './styles';
-import ButtonComponents from '../../components/button';
-import * as PlayerActions from '../../store/players/actions';
-import { PlayerState } from '../../store/players/types';
-import ErrorMessage from '../../components/errorMessage';
+import { BoxData, Label, Input, Select, Form } from "./styles";
+import ButtonComponents from "../../components/button";
+import * as PlayerActions from "../../store/players/actions";
+import { PlayerState } from "../../store/players/types";
+import ErrorMessage from "../../components/errorMessage";
 
 const InputData: React.FC = ({ playersDispatch }: any) => {
-  const [player1, setPlayer1] = useState('');
-  const [player2, setPlayer2] = useState('');
-  const [symbol, setSymbol] = useState('true');
-  const [displayError, setDisplayError] = useState('none');
+  const [player1, setPlayer1] = useState("");
+  const [player2, setPlayer2] = useState("");
+  const [symbol, setSymbol] = useState("true");
+  const [displayError, setDisplayError] = useState("none");
 
   const newPlayer: PlayerState = {
     players: {
@@ -29,10 +29,10 @@ const InputData: React.FC = ({ playersDispatch }: any) => {
   const handleSavePlayers = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!player1 || !player2) {
-      setDisplayError('block');
+      setDisplayError("block");
     } else {
       playersDispatch(newPlayer);
-      window.location.href = '/game';
+      window.location.href = "/game";
     }
   };
 
@@ -55,8 +55,7 @@ const InputData: React.FC = ({ playersDispatch }: any) => {
               name="symbol"
               id="symbol"
               value={symbol}
-              onChange={(e) => setSymbol(e.target.value)}
-            >
+              onChange={(e) => setSymbol(e.target.value)}>
               <option defaultChecked value="true">
                 X
               </option>

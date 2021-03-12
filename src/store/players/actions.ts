@@ -1,4 +1,4 @@
-import { PlayerActions, PlayerActionsState, PlayerState } from './types';
+import { PlayerActions, PlayerActionsState, PlayerState } from "./types";
 
 export function changeNamePlayers(newPlayer: PlayerState): PlayerActionsState {
   return {

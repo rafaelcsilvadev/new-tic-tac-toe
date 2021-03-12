@@ -1,5 +1,5 @@
-import React, { PropsWithChildren } from 'react';
-import { Message } from './styles';
+import React, { PropsWithChildren } from "react";
+import { Message } from "./styles";
 
 type Props = {
   display?: string;

@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
-import playerReducer from './players';
+import { combineReducers } from "redux";
+import playerReducer from "./players";
 
 const rootReducer = combineReducers({
   playerReducer,

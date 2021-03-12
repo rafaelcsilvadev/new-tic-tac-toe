@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Button from '../button';
-import { PlayerState } from '../../store/players/types';
-import * as PlayerActions from '../../store/players/actions';
+import React, { useState } from "react";
+import { Dispatch } from "redux";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import Button from "../button";
+import { PlayerState } from "../../store/players/types";
+import * as PlayerActions from "../../store/players/actions";
 // eslint-disable-next-line object-curly-newline
-import { Section, BoxSquares, House, BoxWin, Text, BoxButton } from './styles';
+import { Section, BoxSquares, House, BoxWin, Text, BoxButton } from "./styles";
 
 interface StateProps {
   playerReducer: PlayerState;
@@ -19,13 +19,13 @@ const Square: React.FC = ({
   playersDispatch,
 }: any) => {
   const [nextPlayer, setNextPlayer] = useState(true);
-  const [winDisplay, setWinDisplay] = useState('none');
-  const [squaresDisplay, setSquaresDisplay] = useState('block');
-  const [winMessage, setWinMessage] = useState('');
+  const [winDisplay, setWinDisplay] = useState("none");
+  const [squaresDisplay, setSquaresDisplay] = useState("block");
+  const [winMessage, setWinMessage] = useState("");
   const [field, setField] = useState(Array(9).fill(null));
   const [symbol, setSymbol] = useState(
     // eslint-disable-next-line no-unneeded-ternary
-    playerState.players.symbol === 'true' ? true : false,
+    playerState.players.symbol === "true" ? true : false,
   );
 
   const ActionObject: PlayerState = {
@@ -62,20 +62,20 @@ const Square: React.FC = ({
         newField[a] === newField[c]
       ) {
         if (nextPlayer) {
-          setWinDisplay('flex');
-          setSquaresDisplay('none');
+          setWinDisplay("flex");
+          setSquaresDisplay("none");
           scoreDispatchPlayer1(ActionObject);
           setWinMessage(`O jogador ${playerState.players.player1} ganhou.`);
         } else {
-          setWinDisplay('flex');
-          setSquaresDisplay('none');
+          setWinDisplay("flex");
+          setSquaresDisplay("none");
           scoreDispatchPlayer2(ActionObject);
           setWinMessage(`O jogador ${playerState.players.player2} ganhou.`);
         }
       } else if (!newField.some((e) => e === null)) {
-        setWinDisplay('flex');
-        setSquaresDisplay('none');
-        return setWinMessage('Velha');
+        setWinDisplay("flex");
+        setSquaresDisplay("none");
+        return setWinMessage("Velha");
       }
     }
 
@@ -88,7 +88,7 @@ const Square: React.FC = ({
       return;
     }
 
-    newField[fieldValue] = symbol === true ? 'X' : 'O';
+    newField[fieldValue] = symbol === true ? "X" : "O";
     setField(newField);
 
     setTimeout(() => {
@@ -104,8 +104,8 @@ const Square: React.FC = ({
   };
 
   const newGame = () => {
-    setWinDisplay('none');
-    setSquaresDisplay('block');
+    setWinDisplay("none");
+    setSquaresDisplay("block");
     setField(Array(9).fill(null));
   };
 

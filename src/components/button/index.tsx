@@ -1,8 +1,8 @@
-import React, { PropsWithChildren } from 'react';
-import { Button } from './styles';
+import React, { PropsWithChildren } from "react";
+import { Button } from "./styles";
 
 type Props = {
-  type?: 'button' | 'submit';
+  type?: "button" | "submit";
   onClick?: () => void;
 };
 

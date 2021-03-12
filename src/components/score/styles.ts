@@ -1,7 +1,7 @@
-import styled from 'styled-components/macro';
+import styled from "styled-components/macro";
 
 interface Props {
-  color?: string | '#fff';
+  color?: string | "#fff";
   display?: string;
 }
 
