@@ -10,9 +10,7 @@ interface StateProps {
 const Score: React.FC = ({ playerState }: any) => (
   <Section>
     <BoxScore>
-      <ScoreStyle
-        color={playerState.players.symbol ? '#44D420' : '#ffffff'}
-      >
+      <ScoreStyle color={playerState.players.symbol ? '#44D420' : '#ffffff'}>
         {playerState.players.player1}
       </ScoreStyle>
       <ScoreStyle color={playerState.players.symbol ? '#44D420' : '#ffffff'}>
